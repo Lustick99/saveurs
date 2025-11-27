@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saveurs du Monde</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Thilander (CDN inline) -->
+    <link href="https://cdn.jsdelivr.net/npm/thilandercss@latest/dist/thilander.min.css" rel="stylesheet" />
+
+    <!-- Styles de base -->
+    <link rel="stylesheet" href="assets/styles/styles.css">
+
+    <!-- Styles responsifs -->
+    <link rel="stylesheet" href="assets/styles/responsive.css">
+
+    <link rel="stylesheet" href="assets/index.css">
+
+    <style>
+        /* Additional static overrides */
+        .font-display {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .font-sans {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .tracking-350 {
+            letter-spacing: 0.35em;
+        }
+
+        .tracking-100 {
+            letter-spacing: 0.1em;
+        }
+
+        .tracking-50 {
+            letter-spacing: 0.05em;
+        }
+
+        /* Hero hover effect styles */
+        .hero-title-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+            color: transparent;
+            opacity: 0.6;
+            transition: all 0.4s ease;
+        }
+
+        .hero-title-active {
+            -webkit-text-stroke: 0px;
+            color: white;
+            opacity: 1;
+        }
+
+        .hero-bg {
+            transition: opacity 0.7s ease-in-out, transform 2s ease-out;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased bg-[#F7F3E9] text-[#3C1A0B] selection:bg-[#BD8F68] selection:text-white">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent text-white py-8">
+        <div class="nav-container">
+            <div class="nav-left">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-menu group-hover:scale-105 transition-transform">
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+                <div class="nav-item">
+                    Produits
+                    <div class="dropdown">
+                        <div class="dropdown-item">
+                            <a href="produits/boulangerie.html" class="nav-link">Boulangerie</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="produits/viennoiserie.html" class="nav-link">Viennoiserie</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="produits/patisserie.html" class="nav-link">Pâtisserie</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="produits/gateaux.html" class="nav-link">Gâteaux de voyage</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="produits/glaciers.html" class="nav-link">Glaciers</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="produits/chocolat.html" class="nav-link">Chocolat</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="produits/traiteur.html" class="nav-link">Traiteur</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="produits/the.html" class="nav-link">Salon de thé</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    Boutiques
+                </div>
+                <div class="nav-item">
+                    <a href="events.html" class="nav-link">Événements</a>
+                </div>
+            </div>
+
+            <!-- <div class="nav-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center cursor-pointer group">
+                <a href="index.html">
+                    <img src="assets/sdm_logo.png" alt="Saveur du Monde" width="75px" srcset="assets/sdm.png"
+                        class="w-12 h-auto md:w-16 lg:w-20 group-hover:scale-105 transition-transform">
+                </a>
+            </div> -->
+
+            <div class="nav-center">
+                <a href="index.html" class="nav-logo">
+                    <img src="assets/sdm.png" alt="Logo Saveurs du Monde" width="80px" />
+                    <!-- <span>Saveurs du Monde</span> -->
+                </a>
+            </div>
+
+            <div class="nav-right flex items-center gap-8">
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link">À propos</a>
+                </div>
+                <div class="social-icons">
+                    <a href="#" class="hidden md:block hover:opacity-60 transition-opacity group"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hidden md:block hover:opacity-60 transition-opacity group"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" class="hidden md:block hover:opacity-60 transition-opacity group"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+                <button class="lang-switcher hidden md:block hover:opacity-60 transition-opacity group">FR | EN</button>
+            </div>
+        </div>
+        <!-- <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <button class="hover:opacity-60 transition-opacity group flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-menu group-hover:scale-105 transition-transform">
+                        <line x1="4" x2="20" y1="12" y2="12" />
+                        <line x1="4" x2="20" y1="6" y2="6" />
+                        <line x1="4" x2="20" y1="18" y2="18" />
+                    </svg>
+                    <span
+                        class="hidden md:inline text-[10px] font-medium tracking-350 uppercase opacity-90 group-hover:opacity-100">
+                        Menu
+                    </span>
+                </button>
+            </div>
+
+            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center cursor-pointer group">
+                <a href="index.html">
+                    <img src="assets/sdm_logo.png" alt="Saveur du Monde" width="75px" srcset="assets/sdm.png"
+                        class="w-12 h-auto md:w-16 lg:w-20 group-hover:scale-105 transition-transform">
+                </a>
+            </div>
+
+            <div class="flex items-center gap-8">
+                <button class="hidden md:block hover:opacity-60 transition-opacity group">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-search group-hover:scale-105 transition-transform">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.3-4.3" />
+                    </svg>
+                </button>
+                <button class="hidden md:block hover:opacity-60 transition-opacity group">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-user group-hover:scale-105 transition-transform">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                </button>
+                <button class="hover:opacity-60 transition-opacity relative group">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-shopping-bag group-hover:scale-105 transition-transform">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                        <path d="M3 6h18" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    <span
+                        class="absolute -top-1.5 -right-1.5 bg-[#BD8F68] text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
+                </button>
+            </div>
+        </div> -->
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen w-full overflow-hidden bg-[#3C1A0B]">
+        <!-- Background Images -->
+        <div class="absolute inset-0 w-full h-full">
+            <div id="hero-bg-1"
+                class="absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-100 hero-bg">
+                <div class="absolute inset-0 bg-[#3C1A0B]/30 z-10"></div>
+                <img src="assets/galeries/pain.jpg" alt="Boulangerie"
+                    class="absolute inset-0 w-full h-full object-cover">
+            </div>
+            <div id="hero-bg-2"
+                class="absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-0 hero-bg">
+                <div class="absolute inset-0 bg-[#3C1A0B]/30 z-10"></div>
+                <img src="assets/viennoiserie.png" alt="Viennoiserie"
+                    class="absolute inset-0 w-full h-full object-cover">
+            </div>
+            <div id="hero-bg-3"
+                class="absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-0 hero-bg">
+                <div class="absolute inset-0 bg-[#3C1A0B]/30 z-10"></div>
+                <img src="assets/rayons/patisserie-bg.jpg" alt="Pâtisserie"
+                    class="absolute inset-0 w-full h-full object-cover">
+            </div>
+            <div id="hero-bg-4"
+                class="absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-0 hero-bg">
+                <div class="absolute inset-0 bg-[#3C1A0B]/30 z-10"></div>
+                <img src="assets/gto1.png" alt="Gâteaux" class="absolute inset-0 w-full h-full object-cover">
+            </div>
+            <div id="hero-bg-5"
+                class="absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-0 hero-bg">
+                <div class="absolute inset-0 bg-[#3C1A0B]/30 z-10"></div>
+                <img src="assets/Glace.jpg" alt="Glacier" class="absolute inset-0 w-full h-full object-cover">
+            </div>
+            <div id="hero-bg-6"
+                class="absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-0 hero-bg">
+                <div class="absolute inset-0 bg-[#3C1A0B]/30 z-10"></div>
+                <img src="assets/chocolaterie.png" alt="Chocolaterie"
+                    class="absolute inset-0 w-full h-full object-cover">
+            </div>
+            <div id="hero-bg-7"
+                class="absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-0 hero-bg">
+                <div class="absolute inset-0 bg-[#3C1A0B]/30 z-10"></div>
+                <img src="assets/traiteur1.jpg" alt="Traiteur" class="absolute inset-0 w-full h-full object-cover">
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-white text-center px-2 pt-8"
+            style="background: rgb(0 0 0 / 35%);">
+            <div class="flex flex-col items-center space-y-4 md:space-y-4 pt-4">
+                <div class="overflow-hidden pt-4" onmouseenter="switchHero(1)">
+                    <h2 id="hero-title-1"
+                        class="font-display text-4xl md:text-5xl lg:text-6xl tracking-100 cursor-pointer transition-all duration-500 ease-out hero-title-active">
+                        <a href="produits/boulangerie.html">
+                            BOULANGERIE
+                        </a>
+                    </h2>
+                </div>
+                <div class="overflow-hidden pt-4" onmouseenter="switchHero(2)">
+                    <h2 id="hero-title-2"
+                        class="font-display text-4xl md:text-5xl lg:text-6xl tracking-100 cursor-pointer transition-all duration-500 ease-out hero-title-stroke">
+                        <a href="produits/viennoiserie.html">
+                            VIENNOISERIE
+                        </a>
+                    </h2>
+                </div>
+                <div class="overflow-hidden pt-4" onmouseenter="switchHero(3)">
+                    <h2 id="hero-title-3"
+                        class="font-display text-4xl md:text-5xl lg:text-6xl tracking-100 cursor-pointer transition-all duration-500 ease-out hero-title-stroke">
+                        <a href="produits/patisserie.html">
+                            PÂTISSERIE
+                        </a>
+                    </h2>
+                </div>
+                <div class="overflow-hidden pt-4" onmouseenter="switchHero(4)">
+                    <h2 id="hero-title-4"
+                        class="font-display text-4xl md:text-5xl lg:text-6xl tracking-100 cursor-pointer transition-all duration-500 ease-out hero-title-stroke">
+                        <a href="produits/gateaux.html">
+                            GÂTEAUX
+                        </a>
+                    </h2>
+                </div>
+                <div class="overflow-hidden pt-4" onmouseenter="switchHero(5)">
+                    <h2 id="hero-title-5"
+                        class="font-display text-4xl md:text-5xl lg:text-6xl tracking-100 cursor-pointer transition-all duration-500 ease-out hero-title-stroke">
+                        <a href="produits/glaciers.html">
+                            GLACIERS
+                        </a>
+                    </h2>
+                </div>
+                <div class="overflow-hidden pt-4" onmouseenter="switchHero(6)">
+                    <h2 id="hero-title-6"
+                        class="font-display text-4xl md:text-5xl lg:text-6xl tracking-100 cursor-pointer transition-all duration-500 ease-out hero-title-stroke">
+                        <a href="produits/chocolat.html">
+                            CHOCOLAT
+                        </a>
+                    </h2>
+                </div>
+                <div class="overflow-hidden pt-4" onmouseenter="switchHero(7)">
+                    <h2 id="hero-title-7"
+                        class="font-display text-4xl md:text-5xl lg:text-6xl tracking-100 cursor-pointer transition-all duration-500 ease-out hero-title-stroke">
+                        <a href="produits/traiteur.html">
+                            TRAITEUR
+                        </a>
+                    </h2>
+                </div>
+            </div>
+
+            <!-- <div class="absolute bottom-12 flex flex-col items-center gap-4">
+                <button
+                    class="border border-white/50 bg-transparent hover:bg-white hover:text-[#3C1A0B] text-white px-10 py-3 text-[10px] tracking-350 uppercase transition-all duration-300 backdrop-blur-sm">
+                    Découvrir
+                </button>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Icons -->
+    <section class="py-20 bg-[#F7F3E9] border-t border-[#BD8F68]/20">
+        <div class="container mx-auto px-6">
+            <div class="flex md:justify-between items-center gap-8 overflow-x-auto pb-4 md:pb-0 no-scrollbar">
+                <div
+                    class="flex flex-col items-center text-center gap-5 group cursor-pointer min-w-[160px] md:min-w-0 flex-1">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white flex items-center justify-center text-[#BD8F68] shadow-[0_4px_20px_rgba(0,0,0,0.03)] group-hover:scale-110 transition-transform duration-500 border border-gray-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="14" x="2" y="5" rx="2" />
+                            <line x1="2" x2="22" y1="10" y2="10" />
+                        </svg>
+                    </div>
+                    <span
+                        class="text-[9px] tracking-350 font-medium text-[#6D4833] uppercase group-hover:text-[#BD8F68] transition-colors">
+                        PAIEMENT EN LIGNE SÉCURISÉ
+                    </span>
+                </div>
+                <div
+                    class="flex flex-col items-center text-center gap-5 group cursor-pointer min-w-[160px] md:min-w-0 flex-1">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white flex items-center justify-center text-[#BD8F68] shadow-[0_4px_20px_rgba(0,0,0,0.03)] group-hover:scale-110 transition-transform duration-500 border border-gray-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 17h4V5H2v12h3" />
+                            <path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5" />
+                            <path d="M14 17h1" />
+                            <circle cx="7.5" cy="17.5" r="2.5" />
+                            <circle cx="17.5" cy="17.5" r="2.5" />
+                        </svg>
+                    </div>
+                    <span
+                        class="text-[9px] tracking-350 font-medium text-[#6D4833] uppercase group-hover:text-[#BD8F68] transition-colors">
+                        LIVRAISON GOZEM
+                    </span>
+                </div>
+                <div
+                    class="flex flex-col items-center text-center gap-5 group cursor-pointer min-w-[160px] md:min-w-0 flex-1">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white flex items-center justify-center text-[#BD8F68] shadow-[0_4px_20px_rgba(0,0,0,0.03)] group-hover:scale-110 transition-transform duration-500 border border-gray-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <span
+                        class="text-[9px] tracking-350 font-medium text-[#6D4833] uppercase group-hover:text-[#BD8F68] transition-colors">
+                        RETRAIT BOUTIQUE
+                    </span>
+                </div>
+                <div
+                    class="flex flex-col items-center text-center gap-5 group cursor-pointer min-w-[160px] md:min-w-0 flex-1">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white flex items-center justify-center text-[#BD8F68] shadow-[0_4px_20px_rgba(0,0,0,0.03)] group-hover:scale-110 transition-transform duration-500 border border-gray-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="6" />
+                            <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+                        </svg>
+                    </div>
+                    <span
+                        class="text-[9px] tracking-350 font-medium text-[#6D4833] uppercase group-hover:text-[#BD8F68] transition-colors">
+                        FIDÉLITÉ RÉCOMPENSÉE
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selection Slider (Static for Pure HTML) -->
+    <section class="relative w-full h-[85vh] bg-[#3C1A0B] text-white overflow-hidden group">
+        <!-- <div class="absolute top-16 left-1/2 -translate-x-1/2 z-20 text-center w-full pointer-events-none">
+            <h3 class="text-[10px] tracking-350 uppercase text-white/70 mb-4">La Collection</h3>
+            <h2 class="font-display text-3xl md:text-5xl tracking-100">SÉLECTION DU MOMENT</h2>
+        </div> -->
+
+        <div class="slider-container">
+            <div class="slider-track">
+                <!-- Slide 1 -->
+                <div class="w-full h-full slide active">
+                    <div class="relative w-full h-full">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-b from-[#3C1A0B]/40 via-transparent to-[#3C1A0B]/70 z-10">
+                        </div>
+                        <img src="assets/round_hazelnut_entremets_cake-DJtTDmWB.png" alt="Millefeuille"
+                            class="w-full h-full object-cover">
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 z-20 text-center w-full px-4">
+                            <p class="text-[20px] tracking-350 mb-5 italic font-serif text-[#BD8F68]">Signature</p>
+                            <!-- <h3 class="font-display text-4xl md:text-6xl lg:text-7xl tracking-100 mb-10">
+                        MILLEFEUILLE VANILLE
+                    </h3> -->
+                            <h3 class="font-display text-4xl md:text-5xl lg:text-6xl tracking-100 mb-10">
+                                SÉLECTION DU MOMENT
+                            </h3>
+                            <!-- <button
+                        class="bg-white text-[#3C1A0B] px-12 py-4 text-[10px] tracking-350 uppercase hover:bg-[#BD8F68] hover:text-white transition-all duration-300 hover:scale-105 transform">
+                        Commander
+                    </button> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="w-full h-full slide">
+                    <div class="relative w-full h-full">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-b from-[#3C1A0B]/40 via-transparent to-[#3C1A0B]/70 z-10">
+                        </div>
+                        <img src="assets/box_of_luxury_chocolates-BtAL-e75.png" alt="Chocolat"
+                            class="w-full h-full object-cover">
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 z-20 text-center w-full px-4">
+                            <p class="text-[20px] tracking-350 mb-5 italic font-serif text-[#BD8F68]">Collection</p>
+                            <!-- <h3 class="font-display text-4xl md:text-6xl lg:text-7xl tracking-100 mb-10">
+                        MILLEFEUILLE VANILLE
+                    </h3> -->
+                            <h3 class="font-display text-4xl md:text-5xl lg:text-6xl tracking-100 mb-10">
+                                COLLECTION CHOCOLAT
+                            </h3>
+                            <!-- <button
+                        class="bg-white text-[#3C1A0B] px-12 py-4 text-[10px] tracking-350 uppercase hover:bg-[#BD8F68] hover:text-white transition-all duration-300 hover:scale-105 transform">
+                        Commander
+                    </button> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="w-full h-full slide">
+                    <div class="relative w-full h-full">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-b from-[#3C1A0B]/40 to-[#3C1A0B]/70 z-10">
+                        </div>
+                        <img src="assets/gto.png" alt="Gateaux"
+                            class="w-full h-full object-cover">
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 z-20 text-center w-full px-4">
+                            <p class="text-[20px] tracking-350 mb-5 italic font-serif text-[#BD8F68]">Évènements</p>
+                            <!-- <h3 class="font-display text-4xl md:text-6xl lg:text-7xl tracking-100 mb-10">
+                        MILLEFEUILLE VANILLE
+                    </h3> -->
+                            <h3 class="font-display text-4xl md:text-5xl lg:text-6xl tracking-100 mb-10">
+                                GÂTEAUX DE MARIAGE
+                            </h3>
+                            <!-- <button
+                        class="bg-white text-[#3C1A0B] px-12 py-4 text-[10px] tracking-350 uppercase hover:bg-[#BD8F68] hover:text-white transition-all duration-300 hover:scale-105 transform">
+                        Commander
+                    </button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flèches de navigation -->
+            <div class="slider-arrow prev">
+                <svg viewBox="0 0 24 24">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                </svg>
+            </div>
+            <div class="slider-arrow next">
+                <svg viewBox="0 0 24 24">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                </svg>
+            </div>
+
+            <!-- Navigation par points -->
+            <div class="slider-nav">
+                <div class="nav-dot active" data-slide="0"></div>
+                <div class="nav-dot" data-slide="1"></div>
+                <div class="nav-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover Section -->
+    <section class="flex flex-col md:flex-row w-full min-h-[700px]">
+        <div class="w-full md:w-1/2 grid grid-cols-1 grid-rows-1 bg-[#F7F3E9] md:p-0 md:bg-[#F7F3E9]">
+            <div class="w-full md:w-1 grid grid-cols-2 grid-rows-1 bg-[#F7F3E9] md:p-0 md:bg-[#F7F3E9]">
+                <div class="col-span-1 relative group overflow-hidden cursor-pointer">
+                    <img src="assets/elegant_white_wedding_cake-B4BmrLd4.png" alt="Wedding Cake"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div
+                        class="absolute bottom-8 left-0 w-full text-center text-white z-10 opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <span class="text-[10px] tracking-350 uppercase font-medium drop-shadow-lg">Pièce Montée</span>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#3C1A0B]/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500">
+                    </div>
+                </div>
+                <div class="col-span-1 relative group overflow-hidden cursor-pointer">
+                    <img src="assets/rectangular_pastry_log-Bdp600VV.png" alt="Entremets"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div
+                        class="absolute bottom-6 left-0 w-full text-center text-white z-10 opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <span class="text-[10px] tracking-350 uppercase font-medium drop-shadow-lg">Entremets</span>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#3C1A0B]/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500">
+                    </div>
+                </div>
+            </div>
+            <div class="row-span-1 relative group overflow-hidden cursor-pointer">
+                <img src="assets/chocolaterie.png" alt="Grand Entremets"
+                    class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                <div
+                    class="absolute bottom-6 left-0 w-full text-center text-white z-10 opacity-90 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <span class="text-[10px] tracking-350 uppercase font-medium drop-shadow-lg">CHOCOLAT CACAO</span>
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-[#3C1A0B]/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500">
+                </div>
+            </div>
+        </div>
+        <div
+            class="w-full md:w-1/2 p-12 md:p-24 flex flex-col justify-center items-center text-center bg-[#F7F3E9] relative">
+            <div class="max-w-lg mx-auto flex flex-col items-center">
+                <span class="text-[10px] tracking-350 text-[#A56B3B] uppercase mb-8">Découvrez</span>
+                <h2
+                    class="font-display text-3xl md:text-5xl lg:text-6xl text-[#3C1A0B] leading-[1.15] tracking-50 mb-12">
+                    NOS CRÉATIONS SUR MESURE POUR VOS ÉVÈNEMENTS
+                </h2>
+                <!-- <div class="flex flex-col sm:flex-row items-center gap-8">
+                    <button
+                        class="bg-[#BD8F68] text-white px-10 py-4 text-[10px] tracking-350 uppercase hover:bg-[#3C1A0B] transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1">
+                        Voir le catalogue
+                    </button>
+                    <button
+                        class="text-[#3C1A0B] text-[10px] tracking-350 uppercase hover:text-[#BD8F68] transition-colors border-b border-[#BD8F68]/30 hover:border-[#BD8F68] pb-1">
+                        Nous contacter
+                    </button>
+                </div> -->
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Locations -->
+    <section class="relative w-full h-[85vh] overflow-hidden">
+        <div class="absolute inset-0 bg-[#3C1A0B]/30 z-10"></div>
+        <div class="absolute inset-0 w-full h-full">
+            <img src="assets/images/header-bg-new.png" alt="Boutique Lomé"
+                class="absolute inset-0 w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-white px-4 text-center"
+            style="background: rgb(0 0 0 / 35%);">
+            <h2 class="font-display text-4xl md:text-6xl tracking-100 mb-8 drop-shadow-lg">NOS ADRESSES</h2>
+            <p class="max-w-lg mx-auto text-sm font-light leading-relaxed mb-10 opacity-90 tracking-wide">
+                Retrouvez nos boutiques à Lomé, derrière l'hotel LA PAIX.
+                Venez découvrir nos créations exclusives en boutique.
+            </p>
+            <div class="flex flex-col items-center gap-2">
+                <button
+                    class="border-b border-white pb-2 text-[10px] tracking-350 uppercase hover:text-[#BD8F68] hover:border-[#BD8F68] transition-colors">
+                    <a href="about.html#location">Trouver une boutique</a>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-main">
+            <div class="footer-section">
+                <h3>Nos Boutiques</h3>
+                <div class="boutique-card">
+                    <div class="boutique-name">Boutique Centre-Ville</div>
+                    <div class="boutique-info">
+                        123 Avenue de la République<br>
+                        Lomé, Togo<br>
+                        Tél: +228 22 22 96 97<br>
+                        Cél: +228 93 53 97 83<br>
+                        Lun-Sam: 6h30-20h | Dim: 6h30-19h
+                    </div>
+                </div>
+                <div class="boutique-card">
+                    <div class="boutique-name">Boutique Aéroport</div>
+                    <div class="boutique-info">
+                        Terminal International<br>
+                        Lomé-Tokoin, Togo<br>
+                        Tél: +228 22 YY YY YY<br>
+                        Lun-Sam: 6h30-20h | Dim: 6h30-19h
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Nos Produits</a>
+                    <a href="#" class="footer-link">Nos Boutiques</a>
+                    <a href="#" class="footer-link">Événements</a>
+                    <a href="#" class="footer-link">À propos</a>
+                    <a href="#" class="footer-link">Contact</a>
+                    <a href="#" class="footer-link">Carrières</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Livraison</h3>
+                <div class="delivery-content">
+                    <p class="delivery-text">Retrouvez notre boutique en ligne sur</p>
+                    <button class="gozem-button">COMMANDER SUR GOZEM</button>
+                    <p class="delivery-text" style="margin-top: 1rem; font-size: 0.85rem;">
+                        Livraison rapide dans tout Lomé<br>
+                        Commande minimum: 2000 FCFA
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <img src="assets/sdm_logo.png" alt="Logo Saveurs du Monde" width="200px" />
+            </div>
+            <div class="footer-socials">
+                <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-legal">
+                <a href="#">Mentions légales</a>
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Conditions générales de vente</a>
+                <a href="#">Politique de cookies</a> <br>
+                <p class="copyright">
+                    © 2025 Saveurs du Monde Togo. Tous droits réservés. |
+                    Design by <a href="wa.me/22899005006">Lustick Services</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 2000);
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const locationText = document.getElementById('nav-location');
+            if (window.scrollY > 50) {
+                navbar.classList.remove('bg-transparent', 'text-white', 'py-8');
+                navbar.classList.add('bg-[#F7F3E9]', 'text-[#3C1A0B]', 'py-4', 'shadow-sm');
+                locationText.classList.remove('text-white/80');
+                locationText.classList.add('text-[#6D4833]');
+            } else {
+                navbar.classList.add('bg-transparent', 'text-white', 'py-8');
+                navbar.classList.remove('bg-[#F7F3E9]', 'text-[#3C1A0B]', 'py-4', 'shadow-sm');
+                locationText.classList.add('text-white/80');
+                locationText.classList.remove('text-[#6D4833]');
+            }
+        });
+
+        // Hero Hover Effect
+        function switchHero(id) {
+            // Reset all backgrounds
+            document.querySelectorAll('.hero-bg').forEach(el => {
+                el.classList.remove('opacity-100');
+                el.classList.add('opacity-0');
+                el.querySelector('img').classList.remove('scale-105');
+                el.querySelector('img').classList.add('scale-100');
+            });
+
+            // Activate selected background
+            const bg = document.getElementById(`hero-bg-${id}`);
+            if (bg) {
+                bg.classList.remove('opacity-0');
+                bg.classList.add('opacity-100');
+                bg.querySelector('img').classList.remove('scale-100');
+                bg.querySelector('img').classList.add('scale-105');
+            }
+
+            // Reset all titles
+            for (let i = 1; i <= 7; i++) {
+                const title = document.getElementById(`hero-title-${i}`);
+                if (i === id) {
+                    title.classList.remove('hero-title-stroke');
+                    title.classList.add('hero-title-active');
+                } else {
+                    title.classList.add('hero-title-stroke');
+                    title.classList.remove('hero-title-active');
+                }
+            }
+        }
+
+
+        // Slider Section
+        let currentSSlide = 0;
+        const sslides = document.querySelectorAll('.slide');
+        const navDots = document.querySelectorAll('.nav-dot');
+        const sliderTrack = document.querySelector('.slider-track');
+        const slideCounter = document.querySelector('.slide-counter .current');
+        const totalSSlides = sslides.length;
+        let autoPlayInterval;
+
+        function updateSlider(index) {
+            // Mise à jour de la position
+            sliderTrack.style.transform = `translateX(-${index * 100}%)`;
+
+            // Mise à jour des classes actives
+            sslides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+
+            navDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+
+            // Mise à jour du compteur
+            slideCounter.textContent = String(index + 1).padStart(2, '0');
+
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            const next = (currentSlide + 1) % totalSSlides;
+            updateSlider(next);
+        }
+
+        function prevSlide() {
+            const prev = (currentSlide - 1 + totalSSlides) % totalSSlides;
+            updateSlider(prev);
+        }
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+
+        // Navigation par flèches
+        document.querySelector('.slider-arrow.next').addEventListener('click', () => {
+            nextSlide();
+            stopAutoPlay();
+            startAutoPlay();
+        });
+
+        document.querySelector('.slider-arrow.prev').addEventListener('click', () => {
+            prevSlide();
+            stopAutoPlay();
+            startAutoPlay();
+        });
+
+        // Navigation par points
+        navDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                updateSlider(index);
+                stopAutoPlay();
+                startAutoPlay();
+            });
+        });
+
+        // Navigation au clavier
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+                stopAutoPlay();
+                startAutoPlay();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+                stopAutoPlay();
+                startAutoPlay();
+            }
+        });
+
+        // Swipe sur mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.querySelector('.slider-container').addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.querySelector('.slider-container').addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                nextSlide();
+                stopAutoPlay();
+                startAutoPlay();
+            }
+            if (touchEndX > touchStartX + 50) {
+                prevSlide();
+                stopAutoPlay();
+                startAutoPlay();
+            }
+        }
+
+        // Pause au survol
+        document.querySelector('.slider-section').addEventListener('mouseenter', stopAutoPlay);
+        document.querySelector('.slider-section').addEventListener('mouseleave', startAutoPlay);
+
+        // Démarrage de l'autoplay
+        startAutoPlay();
+    </script>
+</body>
+
+</html>
